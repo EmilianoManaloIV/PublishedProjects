@@ -1,0 +1,156 @@
+# Big2 Card Game Project Documentation
+
+## Introduction
+This project implements the Big2 card game, a popular variation of the traditional card game. The game is implemented in C++ using object-oriented programming principles. The choice of Big2 was made due to its strategic depth, interesting gameplay mechanics, and the opportunity to implement complex card game logic.
+
+## Project Statistics
+- Lines of Code: ~1,700 lines
+- Classes: 4 main classes (Card, Deck, Player, PlayingHand)
+- Development Time: [To be filled by developer]
+- GitHub Repository: [To be filled by developer]
+
+## Approach to Development
+The project follows a structured approach to development:
+1. Core game mechanics implementation
+2. Player interaction system
+3. AI player implementation
+4. Game flow and rules enforcement
+5. Testing and refinement
+
+## Concepts
+- Object-Oriented Programming
+- Card Game Logic
+- AI Decision Making
+- Game State Management
+- User Interface Design
+
+## Version Control
+The project uses Git for version control, with the following structure:
+- main.cpp: Core game logic and main loop
+- Card.h: Card class definition
+- Deck.h: Deck management
+- Player.h: Player and AI logic
+- PlayingHand.h: Hand evaluation and comparison
+
+## Game Rules
+Big2 is a shedding-type card game where:
+1. Players start with 13 cards each
+2. The player with the 3 of clubs starts
+3. Players must play higher combinations than the previous player
+4. Valid combinations include:
+   - Single cards
+   - Pairs
+   - Three of a kind
+   - Five-card combinations (straight, flush, full house, etc.)
+5. Game ends when a player runs out of cards
+
+## Description of Code
+
+### Organization
+The code is organized into four main classes:
+1. Card: Represents individual playing cards
+2. Deck: Manages the deck of cards
+3. Player: Handles player actions and AI logic
+4. PlayingHand: Manages hand combinations and comparisons
+
+### Classes
+
+#### Card Class
+```cpp
+class Card {
+    // Properties
+    int card;    // Card value (1-13)
+    int suit;    // Suit value (1-4)
+    
+    // Methods
+    int getCard();
+    int getSuit();
+    // ... other methods
+};
+```
+
+#### Deck Class
+```cpp
+class Deck {
+    // Properties
+    vector<Card> cards;
+    
+    // Methods
+    void shuffleDeck();
+    Card takeTopFromDeck();
+    // ... other methods
+};
+```
+
+#### Player Class
+```cpp
+class Player {
+    // Properties
+    Deck playerDeck;
+    bool isAI;
+    
+    // Methods
+    PlayingHand decision(PlayingHand currentHand);
+    void addToPlayerHand(Card card);
+    // ... other methods
+};
+```
+
+#### PlayingHand Class
+```cpp
+class PlayingHand {
+    // Properties
+    vector<Card> cards;
+    
+    // Methods
+    bool isValid();
+    bool canBeat(PlayingHand other);
+    // ... other methods
+};
+```
+
+## Sample Input/Output
+[To be filled with actual game session examples]
+
+## Documentation of Code
+
+### Flowchart
+[To be added - Visual representation of game flow]
+
+### Pseudo-Code
+Main Game Loop:
+```
+1. Initialize game
+2. Deal cards to players
+3. Find player with 3 of clubs
+4. While game not over:
+   a. Get current player
+   b. Show current hand to beat
+   c. Get player's decision
+   d. Update game state
+   e. Check for game over
+5. Display winner
+```
+
+### UML Class Diagram
+[To be added - Visual representation of class relationships]
+
+## Version History
+1.0.0 - Initial project setup
+- Created basic class structure
+- Implemented core game mechanics
+- Added AI player functionality
+
+[To be updated with future changes]
+
+## Checkoff Sheet
+- [ ] Code compiles without errors
+- [ ] All game rules implemented correctly
+- [ ] AI players make reasonable decisions
+- [ ] User interface is clear and functional
+- [ ] Documentation is complete
+- [ ] Version control is properly maintained
+- [ ] Code follows style guidelines
+- [ ] All classes are properly documented
+- [ ] Game flow is smooth and bug-free
+- [ ] Error handling is implemented 
