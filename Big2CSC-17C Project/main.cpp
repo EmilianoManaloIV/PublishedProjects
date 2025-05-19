@@ -8,6 +8,7 @@
 #include <random>
 #include <numeric>
 #include <algorithm>
+#include <limits>
 using namespace std;
 
 // Function to find player with three of clubs
@@ -154,5 +155,11 @@ int main()
     delete AI1;
     delete AI2;
     delete AI3;
+
+    // Wait for user input before exiting
+    cout << "\nPress Enter to exit...";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.get();
+    
     return 0;
 }
